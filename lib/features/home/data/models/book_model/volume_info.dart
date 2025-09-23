@@ -23,6 +23,7 @@ class VolumeInfo {
   String? previewLink;
   String? infoLink;
   String? canonicalVolumeLink;
+  num? averageRating;
 
   VolumeInfo(
       {this.title,
@@ -43,7 +44,9 @@ class VolumeInfo {
         this.language,
         this.previewLink,
         this.infoLink,
-        this.canonicalVolumeLink});
+        this.canonicalVolumeLink,
+        this.averageRating,
+      });
 
   VolumeInfo.fromJson(Map<String, dynamic> json) {
     title = json['title'];
@@ -76,6 +79,7 @@ class VolumeInfo {
     previewLink = json['previewLink'];
     infoLink = json['infoLink'];
     canonicalVolumeLink = json['canonicalVolumeLink'];
+    averageRating = json['averageRating'];
   }
 
   Map<String, dynamic> toJson() {
@@ -108,6 +112,7 @@ class VolumeInfo {
     data['previewLink'] = previewLink;
     data['infoLink'] = infoLink;
     data['canonicalVolumeLink'] = canonicalVolumeLink;
+    data['averageRating'] = averageRating;
     return data;
   }
 }
