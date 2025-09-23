@@ -10,12 +10,21 @@ abstract class HomeRemoteDataSource{
 class HomeRemoteDataSourceImpl extends HomeRemoteDataSource{
   final ApiService apiService;
   HomeRemoteDataSourceImpl(this.apiService);
+
   @override
   Future<List<BookEntity>> fetchFeaturedBooks() async{
    var data = await apiService.get(endPoint: 'volumes?Filtering=free-ebooks&q=programming');
    List<BookEntity> books = getBooksList(data);
    return books;
   }
+
+  @override
+  Future<List<BookEntity>> fetchNewestBooks() async{
+    var data = await apiService.get(endPoint: 'volumes?Filtering=free-ebooks&q=programming&Sorting=newest');
+    List<BookEntity> books = getBooksList(data);
+    return books;
+  }
+
 
   List<BookEntity> getBooksList(Map<String, dynamic> data) {
     List<BookEntity> books = [];
@@ -24,11 +33,4 @@ class HomeRemoteDataSourceImpl extends HomeRemoteDataSource{
     }
     return books;
   }
-
-  @override
-  Future<List<BookEntity>> fetchNewestBooks() {
-    // TODO: implement fetchNewestBooks
-    throw UnimplementedError();
-  }
-
 }
