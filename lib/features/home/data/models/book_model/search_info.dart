@@ -8,8 +8,8 @@ class SearchInfo {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['textSnippet'] = this.textSnippet;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['textSnippet'] = textSnippet;
     return data;
   }
 }

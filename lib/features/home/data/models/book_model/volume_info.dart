@@ -5,7 +5,7 @@ import 'package:bookly/features/home/data/models/book_model/reading_modes.dart';
 
 class VolumeInfo {
   String? title;
-  List<String>? authors;
+  List<dynamic>? authors;
   String? publisher;
   String? publishedDate;
   String? description;
@@ -50,7 +50,7 @@ class VolumeInfo {
 
   VolumeInfo.fromJson(Map<String, dynamic> json) {
     title = json['title'];
-    authors = json['authors'].cast<String>();
+    authors = (json['authors'].cast<String>());
     publisher = json['publisher'];
     publishedDate = json['publishedDate'];
     description = json['description'];
