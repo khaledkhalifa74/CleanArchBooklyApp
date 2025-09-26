@@ -1,5 +1,5 @@
 import 'package:bookly/Features/home/presentation/views/widgets/featured_list_view.dart';
-import 'package:bookly/core/utils/styles.dart';
+import 'package:bookly/core/utils/functions/build_error_snack_bar.dart';
 import 'package:bookly/features/home/domain/entities/book_entity.dart';
 import 'package:bookly/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/manager/featured_books_cubit/featured_books_state.dart';
@@ -29,7 +29,7 @@ class _FeaturedBooksListViewBlocConsumerState
         }
         if(state is FeaturedBooksPaginationFailure){
           ScaffoldMessenger.of(context).showSnackBar(
-            buildErrorSnackBar(state),
+            buildErrorSnackBar(state.errorMessage),
           );
         }
       },
@@ -47,18 +47,5 @@ class _FeaturedBooksListViewBlocConsumerState
         }
       },
     );
-  }
-
-  SnackBar buildErrorSnackBar(FeaturedBooksPaginationFailure state) {
-    return SnackBar(
-            backgroundColor: Colors.white,
-              content: Text(
-                state.errorMessage,
-                style: Styles.textStyle16.copyWith(
-                  color: Colors.black
-                ),
-              ),
-            duration: const Duration(seconds: 3),
-          );
   }
 }
