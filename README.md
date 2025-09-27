@@ -1,17 +1,19 @@
-# clean_arch_bookly_app
+# 📚 Clean Architecture Bookly App
 
-A new Flutter project.
+A Flutter application built to **practice and implement Clean Architecture** principles.  
+The app (Bookly) fetches and displays books from a remote API and caches them locally for offline access.
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## 🚀 Features
+- ✅ Implemented **Clean Architecture (Domain - Data - Presentation layers)**  
+- ✅ State Management using **Bloc/Cubit**  
+- ✅ Remote data fetching using **Dio**  
+- ✅ Local caching with **Hive**  
+- ✅ Error handling with custom **Failure classes**  
+- ✅ Separation of concerns for better maintainability and scalability  
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## 🏗️ Project Structure (Clean Architecture)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# CleanArchBooklyApp
